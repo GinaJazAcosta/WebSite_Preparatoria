@@ -101,7 +101,8 @@
 --------------------------------------------------------------*/
 .gallery {
     padding-bottom: 0;
-  }
+    width: 98%;
+}
   
   .gallery .gallery-item {
     overflow: hidden;
