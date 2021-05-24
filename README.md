@@ -18,4 +18,4 @@ Se crea un sitio web de una escuela preparatoria en donde se crea:
  Integrantes:
   •	Acosta Durán Gina Jazmín - 17650005 
   •	Colín Zúñiga Luis Alberto - 17650016 
-  •	Silva Escutia Edwin Jesús -
+  •	Silva Escutia Edwin Jesús - 17650079
