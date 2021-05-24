@@ -36,7 +36,6 @@
 
 window.addEventListener('load', () => {
     let serviciosContainer = select('.servicios-container');
-    console.log(serviciosContainer);
     if (serviciosContainer) {
       let serviciosIsotope = new Isotope(serviciosContainer, {
         itemSelector: '.servicios-item',
