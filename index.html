@@ -40,6 +40,88 @@
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="resource/css/estilo.css">
 
+<style>
+/* --------------- Whu Us --------------- */
+.us .box {
+	padding: 50px 30px;
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+	transition: all ease-in-out 0.3s;
+	height: 100%;
+}
+.us .box h4 {
+	font-size: 24px;
+	font-weight: 600;
+	padding: 0;
+	margin: 20px 0;
+	color: #6c665c;
+}
+.us .box p {
+	color: #aaaaaa;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+}
+.us .box:hover {
+	background: #9D2449;
+	padding: 30px 30px 70px 30px;
+	box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+}
+.us .box:hover span, .us .box:hover h4, .us .box:hover p {
+	color: #fff;
+}
+
+/* --------------- Bachilleratos --------------- */
+.specials {
+  overflow: hidden;
+}
+.specials .nav-tabs {
+  border: 0;
+}
+.specials .nav-link {
+  border: 0;
+  padding: 12px 15px 12px 0;
+  transition: 0.3s;
+  color: #433f39;
+  border-radius: 0;
+  border-right: 2px solid #e8e7e4;
+  font-weight: 600;
+  font-size: 15px;
+}
+.specials .nav-link:hover {
+  color: #9D2449;
+}
+.specials .nav-link.active {
+  color: #9D2449;
+  border-color: #9D2449;
+}
+.specials .tab-pane.active {
+  -webkit-animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-out;
+}
+.specials .details h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #433f39;
+}
+.specials .details p {
+  color: #777777;
+}
+.specials .details p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 992px) {
+  .specials .nav-link {
+    border: 0;
+    padding: 15px;
+  }
+  .specials .nav-link.active, .specials .tab-pane h3{
+    color: #fff;
+    background: #9D2449;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -330,19 +412,25 @@
                   </div>
               <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="aboutus-content ">
-                      <h2><p><span>BIENVENIDOS AL CBTIS 162</span></p>
+                      <h2 id="conocenos" style="text-align:center; font-family: 'KoHo', sans-serif;"><p><span>BIENVENIDOS AL CBTIS 162</span></p>
                       Somos los mejores <span>en enseñanza</span></h2>
-                      <p>
-
-Nuestra institución, forma parte de la Unidad de Educación Media Superior Tecnológica Industrial y de Servicios (UEMSTIS).
-
-El CBTis 162 tiene la finalidad de otorgar servicios de educación a jóvenes de entre 14 y 18 años en el nivel bachillerato en la modalidad bivalente, es decir, que al mismo tiempo que estudian el bachillerato cursan materias de módulos profesionales, las cuales transiferen a los jóvenes competencias profesionales para desarrollar una actividad laboral a nivel técnico.
-
-Son ya 37 años de historia y de servicio a la comunidad de Zitácuaro, Michoacán. A lo largo de estos años, el CBTis 162 se ha mantenido como una institución de vanguardia en conocimientos y técnicas de enseñanza. Prueba de ello, han sido los resultados de nuestros jóvenes alumnos en distintos concursos académicos, culturales y deportivos tanto en eventos locales, estatales y nacionales.
-
-Así mismo, contamos con una plantilla de personal docente capacitada y actualizada para impartir las materias que requiere esta modalidad. Docentes que se capacitan continuamente y cuyos logros personales han permitido entregar a la sociedad alumnos capaces y preparados para ingresar a cualquier institución de nivel superior.
-
-Sin olvidar desde luego, el apoyo y labor de nuestro personal administrativo (ofcinas y mantenimiento), quienes gracias a su compromiso y trabajo diario, el fucionamiento de nuestra institución no sería posible.
+                      <p style="text-align: justify;">
+                        Nuestra institución, forma parte de la Unidad de Educación Media Superior Tecnológica Industrial y de Servicios (UEMSTIS).
+                        <br>&nbsp;
+                        El CBTis 162 tiene la finalidad de otorgar servicios de educación a jóvenes de entre 14 y 18 años en el nivel bachillerato en la modalidad bivalente, es decir, que al mismo tiempo que estudian el bachillerato cursan materias de módulos profesionales, las cuales transiferen a los jóvenes competencias profesionales para desarrollar una actividad laboral a nivel técnico.
+                        <br>&nbsp;
+                        Son ya 37 años de historia y de servicio a la comunidad de Zitácuaro, Michoacán. A lo largo de estos años, el CBTis 162 se ha mantenido como una institución de vanguardia en conocimientos y técnicas de enseñanza. Prueba de ello, han sido los resultados de nuestros jóvenes alumnos en distintos concursos académicos, culturales y deportivos tanto en eventos locales, estatales y nacionales.
+                        <br>&nbsp;
+                        Así mismo, contamos con una plantilla de personal docente capacitada y actualizada para impartir las materias que requiere esta modalidad. Docentes que se capacitan continuamente y cuyos logros personales han permitido entregar a la sociedad alumnos capaces y preparados para ingresar a cualquier institución de nivel superior.
+                        <br>&nbsp;
+                        Sin olvidar desde luego, el apoyo y labor de nuestro personal administrativo (ofcinas y mantenimiento), quienes gracias a su compromiso y trabajo diario, el fucionamiento de nuestra institución no sería posible.
+                        <br>&nbsp;
+                        A los padres de familia, nuestro reconocimiento y agradecimiento a su apoyo constante, pilar del buen desarrollo de las actividades del CBTis 162
+                        <br>&nbsp;
+                        Sirva entonces este medio, para darles la bienvenida a nuestra institución y a nuestro sitio web, en donde encontrarás información relevante a nuestro plantel, personal docente, áreas administrativas y alumnos.
+                        <br>&nbsp;
+                        Las puertas de nuestra institución, están abiertas siempre para escuchar sus comentarios y sugerencias.
+                        <br>&nbsp; 
                       </p>
                   </div>
               </div>
@@ -350,6 +438,162 @@ Sin olvidar desde luego, el apoyo y labor de nuestro personal administrativo (of
           </div>
       </div>
   </div>
+
+  <!-- ======= Misión, visión, valores ======= -->
+  <section id="us" class="us">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-4">
+          <div class="box">
+            <h4> Misión</h4>
+            <p>Formar personas con conocimientos tecnológicos de las áreas industrial, comercial y de servicios a través de la preparación de bachilleratos profesionales técnicos, con el fin de contribuir al desarrollo sustentable del país.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box">
+            <h4> Visión</h4>
+            <p>Permanecer como la mejor opción de estudio en Instituciónes de Educación Media Superior Tecnológica en el oriente de Michoacán, orientada al aprendizaje, desarrollo de competencias y de conocimientos tanto tecnológicos como humanísticos.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box">
+            <h4> Valores</h4>
+            <p> - Orden - Liderazgo - Honestidad - Responsabilidad - Respeto - Disciplina - Compromiso - Vocación de Servicio - Igualdad - Integridad - </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+    <!-- ======= Bachilleratos ======= -->
+    <section id="specials" class="specials bachilleratos">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 id="bachilleratos" style="text-align:center; font-family: 'KoHo', sans-serif;">Bachilleratos <span>Ofertados</span></h2>
+          <p>Preparamos jóvenes humanos en modalidad bivalente, capaces de incorporarse a la vida productiva una vez concluido su Educación Media Superior.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Construcción</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Programación</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Producción Industrial de Alimentos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Contabilidad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Ofimática</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3 style="color: #9D2449;">Construcción</h3>
+                    <p class="font-italic" style="text-align: justify;">
+                      La carrera de Técnico en construcción ofrece las competencias profesionales que permiten al estudiante realizar actividades dirigidas a satisfacer la demanda actual de personal calificado capaz de supervisar, organizar y controlar la construcción de obras, de acuerdo con las necesidades del proyecto; así como también generar su propia empresa con el propósito de autoemplearse.
+                      <br>
+                      Prepara al estudiante para la continuación de sus estudios del nivel superior en áreas relacionadas a su perfil y refuerza sus actitudes de autoaprendizaje, creatividad y desarrollo profesional, así como fomentar los valores de honestidad, responsabilidad, respeto, cooperación y compromiso con la sociedad.
+                      <br>
+                      Todas estas competencias posibilitan al egresado su incorporación al mundo laboral o desarrollar procesos productivos independientes, de acuerdo con sus intereses profesionales y necesidades de su entorno social.
+                    </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="resource/img/bachilleratos/const.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3 style="color: #9D2449;">Programación</h3>
+                    <p class="font-italic" style="text-align: justify;">
+                      La carrera de Técnico en programación ofrece las competencias profesionales que permiten al estudiante realizar actividades dirigidas a: analizar, diseñar, desarrollar , instalar y mantener software de aplicación tomando como base los requerimientos del usuario.
+                      <br>
+                      Todas estas competencias posibilitan al egresado su incorporación al mundo laboral o desarrollar procesos productivos independientes, de acuerdo con sus intereses profesionales y necesidades de su entorno social.
+                      <br>
+                      Así mismo, contribuyen a desarrollar competencias genéricas que les permitan comprender el mundo e influir en él, les capacita para aprender de forma autónoma a lo largo de la vida, desarrollar relaciones armónicas, participar en los ámbitos social, profesional y político.
+                    </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="resource/img/bachilleratos/proga.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3 style="color: #9D2449;">Producción Industrial de Alimentos</h3>
+                    <p class="font-italic" style="text-align: justify;">
+                      La carrera de Técnico en Producción Industrial de Alimentos ofrece las competencias profesionales que permiten al estudiante conservar y procesar las distintas materias primas de origen primario, como las frutas, hortalizas, cereales, carnes, aves, pescados, mariscos y derivados lácteos, en productos y subproductos, que demandan la aplicación de conocimiento para su aprovechamiento.
+                      <br>
+                      Asimismo podrá desarrollar competencias genéricas relacionadas principalmente con la participación en los procesos de comunicación en distintos contextos, la integración efectiva a los equipos de trabajo y la intervención consciente, desde su comunidad en particular, en el país y el mundo en general, todo con apego al cuidado del medio ambiente.
+                      <br> 
+                      La formación profesional se inicia en el segundo semestre y se concluye en el sexto semestre desarrollando en este lapso de tiempo las competencias: ejecutar procesos de conservación y transformación de alimentos, aplicando la reglamentación, legislación y normatividad vigente, hacia el cumplimiento de estándares establecidos de calidad e inocuidad; al mismo tiempo que pueda evaluar los resultados obtenidos, que le permitan realizar ajustes de mejora continua en la producción y optimización de recursos, hasta el sexto semestre de la carrera técnica.
+                    </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="resource/img/bachilleratos/alime.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3 style="color: #9D2449;">Contabilidad</h3>
+                    <p class="font-italic" style="text-align: justify;">
+                      La carrera de Técnico en Contabilidad ofrece las competencias profesionales que permiten al estudiante aplicar las normas de información financiera que emita el Instituto Mexicano de Contadores Públicos, en el manejo del proceso contable en operaciones especiales, de costos, en la aplicación de las leyes relacionadas con las obligaciones fiscales, y en la elaboración de papeles de trabajo para auditoría; con ello podrá efectuar el análisis financiero de una organización, desarrollar una actitud de liderazgo y establecer relaciones interpersonales y con el medio ambiente; esta orientación se dará por medio del componente de formación profesional.
+                      <br> 
+                      Asimismo podrá desarrollar competencias genéricas relacionadas principalmente con la participación en los procesos de comunicación en distintos contextos, la integración efectiva a los equipos de trabajo y la intervención consciente, en su comunidad en particular, en el país y en el mundo en general, todo con apego al cuidado del medio ambiente.
+                      <br> 
+                      La formación profesional se inicia en el segundo semestre, con el desarrollo de las competencias para el registro de operaciones contables, registro de operaciones especiales, registro de operaciones de costos, cálculo de contribuciones y gestión e informe preliminar de auditoría, hasta el sexto semestre de la carrera técnica.
+                    </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="resource/img/bachilleratos/conta.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3 style="color: #9D2449;">Ofimática</h3>
+                    <p class="font-italic" style="text-align: justify;">
+                      La carrera de Técnico en Ofimática ofrece las competencias profesionales que permiten al estudiante realizar actividades dirigidas a gestionar hardware y software de la Ofimática gestionar información de manera local gestionar información de manera remota, diseñar y gestionar bases de datos ofimáticas y, establecer comunicación ofimática.
+                      <br> 
+                      El desarrollo de las competencias se logra desde una perspectiva inter y transdisciplinario a través de las actividades de aprendizaje diseñadas de manera intencionada por el docente en la planeación didáctica de los módulos, las promovidas desde la relación vertical y transversal con las asignaturas de los componentes Básico y Propedéutico, y complementadas por las actividades de los programas de apoyo sicosocial para los estudiantes, dirigidas al tratamiento de las habilidades socioemocionales relativas a la autoconciencia, autorregulación y toma de decisiones.
+                      <br>
+                      El uso constante de las Tecnologías de la Información y Comunicación no deben ser factor de deshumanización e indiferencia ante la problemática social, por el contrario, el conocimiento y la gestión de información, debe concientizar y llevar a la reflexión como agente proactivo que transforme su realidad y promueva el desarrollo humano y el bienestar social.
+                    </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="resource/img/bachilleratos/ofima.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   <!-- ======= Servicios Section ======= -->
   <section id="servicios" class="servicios">
@@ -680,8 +924,6 @@ Sin olvidar desde luego, el apoyo y labor de nuestro personal administrativo (of
   <script src="js/funciones.js"></script>
   <script src="js/funcionesCarrito.js"></script>
   <script src="resource/js/controlador.js"></script>
-  <script>
-  </script>
 
 </body>
 
