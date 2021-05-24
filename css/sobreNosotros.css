@@ -56,21 +56,23 @@
 
 .aboutus-content p {
   font-size: 16px;
-  line-height: 27px; }
+  line-height: 27px; 
+  margin-left: 50px;
+}
   
  /*-- counter --*/
 .single-counter {
   border:none;
-  margin-top: 32px;
+  margin-top: 80px;
   float: left;
   width: 100%; }
    .single-counter {
     float: left;
-    width: 25%;
+    width: 20%;
     padding: 28px 15px 28px; }
     @media only screen and (max-width: 767px) {
       .counter .single-counter {
-        width: 50%; }
+        width: 40%; }
       
     .counter .single-counter + .single-counter {
       border-left: none }
