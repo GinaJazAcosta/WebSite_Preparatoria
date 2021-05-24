@@ -1,12 +1,12 @@
 function irCarrito(){
-    $("#contenedor").hide("slow");
+    $("#.contenedor").hide("slow");
     $("#elementosCarrito").show("slow");
     getCompras();
   }
 
   $("#regresar").on("click", ()=>{
     $("#elementosCarrito").hide("slow");
-    $("#contenedor").show("slow");
+    $(".contenedor").show("slow");
   })
     
   var compras = new Array();
