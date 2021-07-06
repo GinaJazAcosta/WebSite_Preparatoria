@@ -8,18 +8,29 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ asset('public/css/registro.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('/css/registro.css') }}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="container register" style="filter:alpha(opacity=50); opacity:0.9;">
+    <div class="container register" style="filter:alpha(opacity=50); opacity:0.9; position: absolute; z-index: 1; margin: auto 15%;">
+        @if (session()->has('error'))
+            <div id="error" class="alert alert-danger w-100" role="alert" style="display: none; position: absolute; z-index: 100;">
+                {{session()->get('error')}}
+            </div>
+            <script type="text/javascript">
+                $("#error").show("slow");
+                setTimeout(() => {
+                    $("#error").hide("slow");
+                }, 5000);
+            </script>
+        @endif
         <div class="row">
             <div class="col-md-3 register-left">
-                <img src="{{ asset('public/img/LogoDGETI.png') }}" alt=""/>
+                <img src="{{ asset('/img/LogoDGETI.png') }}" alt=""/>
                 <h3>Bienvenido</h3>
                 <p>Por favor selecciona tu modo de registro, tienes dos opciones empleado o estudiante</p>
-                <a href="login.html">Inicia sesion si ya tienes una cuenta</a><br/>
+                <a href="/">Inicia sesion si ya tienes una cuenta</a><br/>
             </div>
             <div class="col-md-9 register-right">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -32,7 +43,8 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <form action="http://31.220.62.39/API/PREPA/public/insertarMaestro" method="POST">
+                        <form method="POST" action="insertarMaestro">
+                        @csrf
                         <h3 class="register-heading">Aplicar como empleado</h3>
                         <div class="row register-form">
                             <div class="col-md-6">
@@ -40,10 +52,10 @@
                                     <input type="text" class="form-control" placeholder="Nombre(s) *" value="" requiered name="nombre"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Apellido Paterno *" value="" name="paterno"/>
+                                    <input type="text" class="form-control" placeholder="Apellido Paterno *" value="" requiered name="paterno"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Apellido Materno *" value="" name="materno"/>
+                                    <input type="text" class="form-control" placeholder="Apellido Materno *" value="" requiered name="materno"/>
                                 </div>
                                 <div class="form-group">
                                     <div class="maxl">
@@ -58,37 +70,37 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" placeholder="Fecha de nacimiento *" value="" name="nacimiento"/>
+                                    <input type="date" class="form-control" placeholder="Fecha de nacimiento *" value="" requiered name="nacimiento"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" maxlength="10" minlength="10" class="form-control" placeholder="Numero de telefono*" value="" name="telefono"/>
+                                    <input type="number" maxlength="10" minlength="10" class="form-control" placeholder="Numero de telefono*" value="" requiered name="telefono"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Correo Electronico *" value="" name="correo"/>
+                                    <input type="email" class="form-control" placeholder="Correo Electronico *" value="" requiered name="correo"/>
                                 </div>
                             </div>
                             
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="number" maxlength="5" minlength="5" class="form-control" placeholder="Codigo Postal *" value="" name="cp"/>
+                                    <input type="number" maxlength="5" minlength="5" class="form-control" placeholder="Codigo Postal *" value="" requiered name="cp"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nivel de estudios *" value="" name="nivelEstudios"/>
+                                    <input type="text" class="form-control" placeholder="Nivel de estudios *" value="" requiered name="nivelEstudios"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Casa de estudios *" value="" name="casaEstudios"/>
+                                    <input type="text" class="form-control" placeholder="Casa de estudios *" value="" requiered name="casaEstudios"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Contraseña *" value="" name="contra"/>
+                                    <input type="text" class="form-control" placeholder="Contraseña *" value="" requiered name="contra"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Imagen *" value="" name="img"/>
+                                    <input type="text" class="form-control" placeholder="Imagen *" value="" requiered name="img"/>
                                 </div>
                                 <div class="form-group">
-                                    <textarea type="text" class="form-control" placeholder="Imagen *" value="" name="desc"></textarea>
+                                    <textarea type="text" class="form-control" placeholder="Imagen *" value="" requiered name="desc"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" name="puesto">
+                                    <select class="form-control" name="puesto" requiered>
                                         <option class="hidden"  selected disabled>Puesto</option>
                                         <option value="Docente">Docente</option>
                                         <option value="Secretaria">Secretaria</option>
@@ -103,17 +115,18 @@
                     </div>
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <h3  class="register-heading">Aplicar como estudiante</h3>
-                        <form action="http://31.220.62.39/API/PREPA/public/insertarEstudiante" method="POST">
+                        <form method="POST" action="insertarEstudiante">
+                            @csrf
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Nombre(s) *" value="" requiered name="nombre"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Apellido Paterno *" value="" name="paterno"/>
+                                    <input type="text" class="form-control" placeholder="Apellido Paterno *" value="" requiered name="paterno"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Apellido Materno *" value="" name="materno"/>
+                                    <input type="text" class="form-control" placeholder="Apellido Materno *" value="" requiered name="materno"/>
                                 </div>
                                 <div class="form-group">
                                     <div class="maxl">
@@ -128,32 +141,32 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" placeholder="Fecha de nacimiento *" value="" name="nacimiento"/>
+                                    <input type="date" class="form-control" placeholder="Fecha de nacimiento *" value="" requiered name="nacimiento"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" maxlength="10" minlength="10" class="form-control" placeholder="Numero de telefono*" value="" name="telefono"/>
+                                    <input type="number" maxlength="10" minlength="10" class="form-control" placeholder="Numero de telefono*" value="" requiered name="telefono"/>
                                 </div>
                             </div>
                                 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Correo Electronico *" value="" name="correo"/>
+                                    <input type="email" class="form-control" placeholder="Correo Electronico *" value="" requiered name="correo"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" maxlength="5" minlength="5" class="form-control" placeholder="Codigo Postal *" value="" name="cp"/>
+                                    <input type="number" maxlength="5" minlength="5" class="form-control" placeholder="Codigo Postal *" value="" requiered name="cp"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" maxlength="8" minlength="8" class="form-control" placeholder="Numero de Control *" value="" name="control"/>
+                                    <input type="number" maxlength="8" minlength="8" class="form-control" placeholder="Numero de Control *" value="" requiered name="control"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Escuela de origen *" value="" name="origen"/>
+                                    <input type="text" class="form-control" placeholder="Escuela de origen *" value="" requiered name="origen"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Contraseña *" value="" name="contra"/>
+                                    <input type="text" class="form-control" placeholder="Contraseña *" value="" requiered name="contra"/>
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control" name="nombreCarrera">
-                                        <option class="hidden"  selected disabled>Por favor selecciona tu carrera</option>
+                                        <option class="hidden"  selected requiered>Por favor selecciona tu carrera</option>
                                         <option value="Trabajo social">Trabajo social</option>
                                         <option value="Contabilidad">Contabilidad</option>
                                         <option value="Mantenimiento">Mantenimiento</option>
