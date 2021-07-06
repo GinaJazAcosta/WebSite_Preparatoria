@@ -33,8 +33,11 @@ Route::get('/obtenerMaestros', function (GuzzleHttp\Client $client){
     dd($data);
 });
 /* REGISTRO */
-Route::POST('/insertarMaestro', function (GuzzleHttp\Client $client){
-    $response = $client->request('POST', "insertarMaestro", [
+
+
+Route::POST('/insertarMaestro', function (Client $client){
+    $response = $client->request('POST', "insertarMaestro", [ 'form_params' => [
+        '_token'=>csrf_token(),
         'nombre'=>request()->nombre,
         'paterno'=>request()->paterno,
         'materno'=>request()->materno,
@@ -48,11 +51,12 @@ Route::POST('/insertarMaestro', function (GuzzleHttp\Client $client){
         'contra'=>request()->contra,
         'img'=>request()->img,
         'desc'=>request()->desc,
-        'puesto'=>request()->puesto
-    ]);
-    $data = json_decode($response->getBody());
-    dd($data);
+        'puesto'=>request()->puesto]]);
+
+    dd($response->getBody());
 });
+
+
 Route::POST('/insertarEstudiante', function (GuzzleHttp\Client $client){
     $response = $client->request('POST', "insertarEstudiante", [
         'nombre'=>request()->nombre,
