@@ -47,4 +47,27 @@ class EstudianteController extends Controller
 
          return $respuesta->getBody();
     }
+
+    public function noticiasEstudiantes(Client $client){
+        $response = $client->request('GET', "obtenerEstudiante?control=".request()->control);
+        $estudiante = json_decode($response->getBody());
+
+        $response = $client->request('GET', 'obtenerNoticias'); 
+        $noticias = json_decode($response->getBody());
+
+        return view('noticiasEstudiante')->with([
+            'noticias' => $noticias,
+            'estudiante' => $estudiante
+        ]);
+    }
+
+    public function incrementarVistas(Client $client){
+        $response = $client->request('POST', 'incrementarVistas', ['form_params' =>[
+            '_token' => csrf_token(),
+            'id'=> request()->id,
+        ]]);
+
+        return $response->getBody();
+    }
+
 }

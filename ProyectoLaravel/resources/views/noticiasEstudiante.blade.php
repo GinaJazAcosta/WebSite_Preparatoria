@@ -32,59 +32,39 @@
 	<div class="offcanvas-body">
 		<div class="list-group w-100 h-100" id="list-tab" role="tablist">
 			<a class="list-group-item list-group-item-dark list-group-item-action" id="btnHome" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home" onclick="javascript:irInicio({{$estudiante[0]->no_control}});"><i class="fas fa-home"></i> Inicio</a>
-			<a class="list-group-item list-group-item-dark list-group-item-action active" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile"><i class="fas fa-id-card"></i> Mis Datos</a>
+			<a class="list-group-item list-group-item-dark list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile" onclick="javascript:irDatos({{$estudiante[0]->no_control}});"><i class="fas fa-id-card"></i> Mis Datos</a>
 			<a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-services" role="tab" aria-controls="list-messages" onclick="javascript:irServicios({{$estudiante[0]->no_control}})"><i class="far fa-list-alt"></i>&nbsp; Servicios</a>
-            <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-news" role="tab" aria-controls="list-messages" onclick="javascript:irNoticias({{$estudiante[0]->no_control}});"><i class="fas fa-newspaper"></i>&nbsp; Noticias</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action active" id="list-messages-list" data-bs-toggle="list" href="#list-news" role="tab" aria-controls="list-messages"><i class="fas fa-newspaper"></i>&nbsp; Noticias</a>
             <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:cerrarSesion();"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión</a>
 		</div>
 	</div>
 </div>
-@csrf
+
 <div class="container" style="transform:translateY(50px)">
     <div class="row">
-        <div class="col-md-4 col-4">
-            <div class="card w-auto">
-                <div class="card-header">
-                    <h4 class="text-center text-light">Datos del Generales</h4>
+            @empty($noticias)
+            <div class="alert alert-danger" role="alert">
+                No hay nada nuevo
+              </div>
+            @else
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach($noticias as $noticia)
+            <div class="col">
+              <div class="card h-100 text-light text-center">
+                <img src="{{$noticia->img_noti}}" class="card-img-top" alt="{{$noticia->titulo_noti}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{$noticia->titulo_noti}}</h5>
+                  <p class="card-text">{{$noticia->descripcion_noti}}</p>
                 </div>
-                <div class="card-body text-left text-light">
-                    <p>Nombre(s): <i>{{$estudiante[0]->nom_per}}</i></p>
-                    <p>Paterno: <i>{{$estudiante[0]->paterno_per}}</i></p>
-                    <p>Materno: <i>{{$estudiante[0]->materno_per}}</i></p>
-                    <p>Fecha Nacimiento: <i>{{$estudiante[0]->fecha_nac}}</i></p>
-                    <p>Codigo Postal: <i>{{$estudiante[0]->cp_per}}</i></p>
+                <div class="card-footer">
+                    @csrf
+                  <button id="btnIncremento" type="button" class="btn btn-outline-primary" onclick="javascript:incrementar({{$noticia->num_noti}})">Ver noticia</button>
                 </div>
+              </div>
             </div>
-        </div>
-        <div class="col-md-8">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="text-center text-light">Datos Escolares</h4>
-                            </div>
-                            <div class="card-body text-left text-light">
-                                <p>No. Control: <i>{{$estudiante[0]->no_control}}</i></p>
-                                <p>Carrera: <i>{{$carrera[0]->nombre_carrera}}</i></p>
-                                <p>Carrera: <i>{{$carrera[0]->bachilleraro_carrera}}</i></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="text-center text-light">Datos de Contacto</h4>
-                                </div>
-                                <div class="card-body text-left text-light">
-                                    <p>Número de telefono: <i>{{$estudiante[0]->telefono_per}}</i></p>
-                                    <p>Correo Electronico: <i>{{$estudiante[0]->correo_per}}</i></p>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
+            @endforeach
+            @endempty
+          </div>
         </div>
     </div>
 </div>

@@ -1,12 +1,12 @@
 # WebSite_Preparatoria
 Implementacion de los servicios para la web de la preparatoria, creados en laravel 7, creados con el proposito para un mejor mantenimiento a la aplicacion,
-Creada por: 
-Luis Alberto Colin Zuñiga
-Gina Jazmin Acosta Duran
-Edwin Jesus Silva Escutia 
+Creada por:
+-Luis Alberto Colin Zuñiga
+-Gina Jazmin Acosta Duran
+-Edwin Jesus Silva Escutia
 */ APLICACION WEB SOBRE UNA PREPARATORIA/*
-Para su correcto uso e implementacion por favor instale todas las dependicas necesarias con la instruccion de *composer install* es necesario tener laragon instalado previamente,
-en caso de no tenerlo favo de dirigirse al siguiente link e instalarlo https://laragon.org/download/ tener en cuenta que tanto la aplicacion como el servidor corren en la version 7,
+Para su correcto uso e implementacion por favor instale todas las dependicas necesarias con la instruccion de *composer install* es necesario tener laragon o composer instalado previamente,
+en caso de no tenerlo favo de dirigirse al siguiente link e instalarlo https://laragon.org/download/ para descagar laragon o https://getcomposer.org/download/ obtener composer, debe de tener en cuenta que la aplicacion esta desarrollada para funcionar en un servidor con la version 7 de PHP,
 como se esta consumiendo una API favor de instalar el cliente HTTP ejecutando la siguiente instruccion en la terminal *composer require guzzlehttp/guzzle*,
 recuerde configurar el archivo de configuracion de aplicacion *.env* agregando el endpoint correcto el cual es *http://31.220.62.39/API/PREPA/public/*,
 es posible que al momento de clonar el proyecto no venga el archvio de configuracion *.env* sino un archivo llamado *.env-example* o algo similar, en ese caso por favor 
@@ -14,9 +14,9 @@ copie dicho archivo y pego en la carpeta raiz de la aplicacion cambia el nombre 
 en caso de que solo quiera probar los servicios proporcionados le otorgamos la posibilidad de usarlos en POSTMAN con el siguiente link https://www.getpostman.com/collections/1fd5984f62e8f3d450f5
 solo importe la coleccion via URL en POSTMAN.
 
-*/Importacion de los servicios a POSTMAN via URL/*
+*/Importación de los servicios a POSTMAN via URL/*
 Para este paso solo necesitamos tener postman instalados en caso de no tenerlo favor de dirigirse al siguiente link *https://www.postman.com/* siga las instruccion de instlacion o
-en caso contrario revise un tutorial para la instalacion del programa, una ves instalado abrira la aplicacion en la parte superior izquierda en la barra de navegacion superior abajo
+en caso contrario revise un tutorial para la instalacion del programa, una ves instalado abrá la aplicación en la parte superior izquierda en la barra de navegacion superior abajo
 aparece *my workspace* del lado derecho tiene dos opciones *new e import* favor de click en la opcion de *import* le tendria que aparecer una ventana, navegue a la pestaña de *link*
 y pegue la url https://www.getpostman.com/collections/1fd5984f62e8f3d450f5 esto deberia crearle una coleccion con todos los servicios disponibles.
 

@@ -11,3 +11,26 @@ function irInicio(control){
 function irServicios(control){
   location = "/serviciosEstudiante/"+control;
 }
+
+function irNoticias(control){
+  location = "/getNoticias/"+control;
+}
+
+function cerrarSesion(){
+    location = "/";
+}
+
+function incrementar(id){
+    $.ajax({
+        type: "POST",
+        url: "/incrementarView",
+        data: {
+            _token: document.querySelector("input[type='hidden']").value,
+            id:id,
+        },
+        dataType: "html",
+        success: function (e) {
+            console.log(e);
+        }
+    });
+}
