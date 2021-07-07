@@ -15,7 +15,9 @@ class loginController extends Controller
         [request()->email, request()->passE]);
 
         if ($datos!=null) {
-            return view("welcome");
+            return view("dashboardEmpleado")->with([
+                'empleado' => $datos
+            ]);
         }else{
             session()->flash('error', 'Datos erroneos.');
             return redirect()->back();

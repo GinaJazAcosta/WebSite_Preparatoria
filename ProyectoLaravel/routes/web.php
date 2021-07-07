@@ -42,6 +42,18 @@ Route::post('/incrementarView', 'EstudianteController@incrementarVistas');
 Route::get('/mostrarCarreras/{control?}','carreraController@getCarreras');
 Route::get('/mostrarDocentes/{control?}','docenteController@getDocentes');
 
+/*DASBOARD EMPLEADO */
+Route::get('/inicioEmpleado', 'EmpleadoController@inicioEmpleado');
+Route::get('/insertarPeriodo/{id}', 'EmpleadoController@insertarPeriodo');
+Route::post('/registrarPeriodo', 'EmpleadoController@registarPeriodo');
+Route::get('/getActivos/{id}', 'EmpleadoController@getActivos');
+Route::get('/estadisticas/{id}', 'EmpleadoController@setEstadisticas');
+Route::get('/reposicionCredencial', 'EmpleadoController@reposicionCredencial');
+Route::get('/carreraMenosSolicitada', 'EmpleadoController@carreraMenosSolicitada');
+Route::get('/carreraMasSolicitada', 'EmpleadoController@carreraMasSolicitada');
+Route::get('/servicioMenosUsado', 'EmpleadoController@servicioMenosUsado');
+Route::get('/alumnosSolicitanteExtraordinarios', 'EmpleadoController@alumnosSolicitantesExtraordinarios');
+
 Route::get('/obtenerMaestros', function (GuzzleHttp\Client $client){
     $response = $client->request('GET', "obtenerMaestros");
     $data = json_decode($response->getBody());
