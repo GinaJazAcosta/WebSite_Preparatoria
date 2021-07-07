@@ -28,7 +28,8 @@
             <div class="col-md-3 register-left">
                 <img src="{{ asset('/img/LogoDGETI.png') }}" alt=""/>
                 <h2>Panel De Acceso</h2>
-                <a href="/registro">Registrate si no tienes cuenta</a><br/>
+                <a href="/registro">Registrate si no tienes cuenta</a><br/><br/><br/>
+                <a href="/welcome">Documentación del <br> API-REST</a><br/>
             </div>
             <div class="col-md-9 register-right">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 200px">

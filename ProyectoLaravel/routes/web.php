@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/registro', function(){
     return view('registro');
 });
+Route::get('/welcome', function(){
+    return view('welcome');
+});
 
 /* LOGIN */
 Route::post('/accesoEstudiante', 'loginController@accesoEstudiante');

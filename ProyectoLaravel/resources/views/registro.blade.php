@@ -44,7 +44,7 @@
                 <a href="/">Inicia sesion si ya tienes una cuenta</a><br/>
             </div>
             <div class="col-md-9 register-right">
-                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 200px">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Empleados</a>
                     </li>
