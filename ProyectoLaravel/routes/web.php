@@ -25,60 +25,12 @@ Route::get('/registro', function(){
 Route::post('/accesoEstudiante', 'loginController@accesoEstudiante');
 Route::post('/accesoEmpleado', 'loginController@accesoEmpleado');
 
-
+/* REGISTRO */
+Route::post('/insertarMaestro', 'registroController@insertarMaestro');
+Route::post('/insertarEstudiante', 'registroController@insertarEstudiante');
 
 Route::get('/obtenerMaestros', function (GuzzleHttp\Client $client){
     $response = $client->request('GET', "obtenerMaestros");
     $data = json_decode($response->getBody());
     dd($data);
 });
-/* REGISTRO */
-
-
-Route::POST('/insertarMaestro', function (Client $client){
-    $response = $client->request('POST', "insertarMaestro", [ 'form_params' => [
-        '_token'=>csrf_token(),
-        'nombre'=>request()->nombre,
-        'paterno'=>request()->paterno,
-        'materno'=>request()->materno,
-        'genero'=>request()->genero,
-        'nacimiento'=>request()->nacimiento,
-        'telefono'=>request()->telefono,
-        'correo'=>request()->correo,
-        'cp'=>request()->cp,
-        'nivelEstudios'=>request()->nivelEstudios,
-        'casaEstudios'=>request()->casaEstudios,
-        'contra'=>request()->contra,
-        'img'=>request()->img,
-        'desc'=>request()->desc,
-        'puesto'=>request()->puesto]]);
-
-    dd($response->getBody());
-});
-
-
-Route::POST('/insertarEstudiante', function (GuzzleHttp\Client $client){
-    $response = $client->request('POST', "insertarEstudiante", [
-        'nombre'=>request()->nombre,
-        'paterno'=>request()->paterno,
-        'materno'=>request()->materno,
-        'genero'=>request()->genero,
-        'nacimiento'=>request()->nacimiento,
-        'telefono'=>request()->telefono,
-        'correo'=>request()->correo,
-        'cp'=>request()->cp,
-        'control'=>request()->control,
-        'origen'=>request()->origen,
-        'contra'=>request()->contra,
-        'nombreCarrera'=>request()->nombreCarrera
-    ]);
-    $data = json_decode($response->getBody());
-    dd($data);
-});
-/*
-Route::get('/intertarEstudiante', function (GuzzleHttp\Client $client){
-    $response = $client->request('POST', "insertarEstudiante", ['nombre'=>request()->nombre,]);
-    $data = json_decode($response->getBody());
-    dd($data);
-});
-*/

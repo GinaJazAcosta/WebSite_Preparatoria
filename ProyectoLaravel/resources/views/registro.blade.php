@@ -25,6 +25,17 @@
                 }, 5000);
             </script>
         @endif
+        @if (session()->has('exito'))
+            <div id="exito" class="alert alert-info w-100" role="alert" style="display: none; position: absolute; z-index: 100;">
+                {{session()->get('exito')}}
+            </div>
+            <script type="text/javascript">
+                $("#exito").show("slow");
+                setTimeout(() => {
+                    $("#exito").hide("slow");
+                }, 5000);
+            </script>
+        @endif
         <div class="row">
             <div class="col-md-3 register-left">
                 <img src="{{ asset('/img/LogoDGETI.png') }}" alt=""/>
@@ -167,11 +178,10 @@
                                 <div class="form-group">
                                     <select class="form-control" name="nombreCarrera">
                                         <option class="hidden"  selected requiered>Por favor selecciona tu carrera</option>
-                                        <option value="Trabajo social">Trabajo social</option>
+                                        <option value="Alimentos ">Alimentos </option>
                                         <option value="Contabilidad">Contabilidad</option>
-                                        <option value="Mantenimiento">Mantenimiento</option>
-                                        <option value="Informatica">Informatica</option>
-                                        <option value="Quimica">Quimica</option>
+                                        <option value="Programacion">Programacion</option>
+                                        <option value="Construccion">Construccion</option>
                                         <option value="Ofimatica">Ofimatica</option>
                                     </select>
                                 </div>
