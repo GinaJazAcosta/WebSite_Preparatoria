@@ -37,8 +37,11 @@ class loginController extends Controller
 
 
     public function cargarInicio(Client $client){
-            $response = $client->request('GET', "obtenerEstudiante?control=".request()->control);
-            $estudiante = json_decode($response->getBody());
-            return view("dashboardEstudiante")->With(['estudiante'=>$estudiante]);
+        $response = $client->request('GET', "obtenerEstudiante?control=".request()->control);
+        $estudiante = json_decode($response->getBody());
+
+        return view("dashboardEstudiante")->With([
+            'estudiante'=>$estudiante
+        ]);
     }
 }

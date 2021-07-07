@@ -34,3 +34,11 @@ function incrementar(id){
         }
     });
 }
+
+function mostrarDocentes(control){
+  location = "/mostrarDocentes/"+control;
+}
+
+function mostrarCarreras(control){
+  location = "/mostrarCarreras/"+control;
+}

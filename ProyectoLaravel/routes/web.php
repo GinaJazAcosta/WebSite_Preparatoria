@@ -39,6 +39,8 @@ Route::post('/compraEstudiante','EstudianteController@registrarCompra');
 Route::get('/serviciosEstudiante/{control}','EstudianteController@serviciosEstudiante');
 Route::get('/getNoticias/{control}', 'EstudianteController@noticiasEstudiantes');
 Route::post('/incrementarView', 'EstudianteController@incrementarVistas');
+Route::get('/mostrarCarreras/{control?}','carreraController@getCarreras');
+Route::get('/mostrarDocentes/{control?}','docenteController@getDocentes');
 
 Route::get('/obtenerMaestros', function (GuzzleHttp\Client $client){
     $response = $client->request('GET', "obtenerMaestros");

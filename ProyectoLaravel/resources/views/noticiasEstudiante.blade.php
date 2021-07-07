@@ -12,8 +12,8 @@
 <body>
     <div class="btn-group btn-flotanteUsuario">
         <button type="button" class="btn dropdown-toggle text-light botonDesplegable" data-bs-toggle="dropdown" aria-expanded="false" style=" outline:0 !important;">
-        <i class="fas fa-user"></i>
-        {{$estudiante[0]->nom_per}}&nbsp;{{$estudiante[0]->paterno_per}}&nbsp;{{$estudiante[0]->materno_per}}
+          <i class="fas fa-user"></i>
+          {{$estudiante[0]->nom_per}}&nbsp;{{$estudiante[0]->paterno_per}}&nbsp;{{$estudiante[0]->materno_per}}
         </button>
         <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></li>
@@ -23,7 +23,7 @@
 
 <a class="btn-flotante" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fas fa-arrow-alt-circle-right"></i> Menú</a>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color:rgba(0,0,0,0.8) !important"">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color:rgba(0,0,0,0.8) !important">
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title" id="offcanvasExampleLabel">Menú</h5>
 		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" style="background-color:white"></button>
@@ -31,11 +31,19 @@
 
 	<div class="offcanvas-body">
 		<div class="list-group w-100 h-100" id="list-tab" role="tablist">
-			<a class="list-group-item list-group-item-dark list-group-item-action" id="btnHome" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home" onclick="javascript:irInicio({{$estudiante[0]->no_control}});"><i class="fas fa-home"></i> Inicio</a>
-			<a class="list-group-item list-group-item-dark list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile" onclick="javascript:irDatos({{$estudiante[0]->no_control}});"><i class="fas fa-id-card"></i> Mis Datos</a>
-			<a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-services" role="tab" aria-controls="list-messages" onclick="javascript:irServicios({{$estudiante[0]->no_control}})"><i class="far fa-list-alt"></i>&nbsp; Servicios</a>
-            <a class="list-group-item list-group-item-dark list-group-item-action active" id="list-messages-list" data-bs-toggle="list" href="#list-news" role="tab" aria-controls="list-messages"><i class="fas fa-newspaper"></i>&nbsp; Noticias</a>
-            <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:cerrarSesion();"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión</a>
+      <a class="list-group-item list-group-item-dark list-group-item-action" id="btnHome" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home" onclick="javascript:irInicio({{$estudiante[0]->no_control}});"><i class="fas fa-home"></i> Inicio</a>
+
+      <a class="list-group-item list-group-item-dark list-group-item-action" id="btnDatos" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile" onclick="javascript:irDatos({{$estudiante[0]->no_control}});"><i class="fas fa-id-card"></i> Mis Datos</a>
+
+      <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:irServicios({{$estudiante[0]->no_control}});"><i class="far fa-list-alt"></i>&nbsp; Servicios</a>
+
+      <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:mostrarDocentes({{$estudiante[0]->no_control}});"><i class="fa fa-user-friends"></i>&nbsp; Empleados</a>
+
+      <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:mostrarCarreras({{$estudiante[0]->no_control}});"><i class="fa fa-list"></i>&nbsp; Carreras</a>
+
+      <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:irNoticias({{$estudiante[0]->no_control}});"><i class="fas fa-newspaper"></i> Noticias</a>
+
+      <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:cerrarSesion();"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión</a>
 		</div>
 	</div>
 </div>

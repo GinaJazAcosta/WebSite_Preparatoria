@@ -40,8 +40,8 @@
         aria-controls="offcanvasExample"><i class="fas fa-arrow-alt-circle-right"></i> Menú</a>
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
-        style="background-color:rgba(0,0,0,0.8) !important"">
- <div class=" offcanvas-header">
+        style="background-color:rgba(0,0,0,0.8) !important">
+    <div class=" offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menú</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"
             style="background-color:white"></button>
@@ -49,10 +49,18 @@
 
     <div class="offcanvas-body">
         <div class="list-group w-100 h-100" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-dark list-group-item-action" id="btnHome" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home" onclick="javascript:irInicio({{ $estudiante[0]->no_control }});"><i class="fas fa-home"></i> Inicio</a>
-            <a class="list-group-item list-group-item-dark list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile" onclick="javascript:irDatos({{$estudiante[0]->no_control}});"><i class="fas fa-id-card"></i> Mis Datos</a>
-            <a class="list-group-item list-group-item-dark list-group-item-action active" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages"><i class="far fa-list-alt"></i>&nbsp; Servicios</a>
-            <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:irNoticias();"><i class="fas fa-newspaper"></i> Noticias</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" id="btnHome" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home" onclick="javascript:irInicio({{$estudiante[0]->no_control}});"><i class="fas fa-home"></i> Inicio</a>
+
+            <a class="list-group-item list-group-item-dark list-group-item-action" id="btnDatos" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile" onclick="javascript:irDatos({{$estudiante[0]->no_control}});"><i class="fas fa-id-card"></i> Mis Datos</a>
+
+            <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:irServicios({{$estudiante[0]->no_control}});"><i class="far fa-list-alt"></i>&nbsp; Servicios</a>
+
+            <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:mostrarDocentes({{$estudiante[0]->no_control}});"><i class="fa fa-user-friends"></i>&nbsp; Empleados</a>
+
+            <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:mostrarCarreras({{$estudiante[0]->no_control}});"><i class="fa fa-list"></i>&nbsp; Carreras</a>
+
+            <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:irNoticias({{$estudiante[0]->no_control}});"><i class="fas fa-newspaper"></i> Noticias</a>
+
             <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:cerrarSesion();"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión</a>
         </div>
     </div>
@@ -86,34 +94,33 @@
 
     <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content bg-dark text-light">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">¿Comprar?</h5>
-              <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">¿Comprar?</h5>
+                    <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 id="nomServicio"></h5>
+                    <form id="formCompra" action="javascript:comprar();">
+                        @csrf
+                        <input type="hidden" id="noControl" value="{{$estudiante[0]->no_control}}">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Total</label>
+                            <input type="text" class="form-control" id="totalServicio" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Numero de tarjeta</label>
+                            <input type="text" class="form-control" id="numTarjeta" required>
+                        </div>
+                        <div></div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button id="btnComprar" type="submit" class="btn btn-outline-success">Aceptar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="modal-body">
-                <h5 id="nomServicio"></h5>
-                <form id="formCompra" action="javascript:comprar();">
-                    @csrf
-                    <input type="hidden" id="noControl" value="{{$estudiante[0]->no_control}}">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Total</label>
-                      <input type="text" class="form-control" id="totalServicio" readonly>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Numero de tarjeta</label>
-                      <input type="text" class="form-control" id="numTarjeta" required>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button id="btnComprar" type="submit" class="btn btn-outline-success">Aceptar</button>
-                    </div>
-                </form>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

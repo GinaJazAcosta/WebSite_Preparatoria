@@ -8,6 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('/css/estilosEstudiante.css')}}">
     <link rel="shortcut icon" href="{{ asset ('img/tarea.png') }}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+    <style>
+        .cont{
+            display: flex;
+        }
+        .clear{
+            height: 20px;
+        }
+    </style>
+
 </head>
 <body>
     <div class="btn-group btn-flotanteUsuario">
@@ -47,54 +57,29 @@
 		</div>
 	</div>
 </div>
-@csrf
+
 <div class="container" style="transform:translateY(50px)">
-    <div class="row">
-        <div class="col-md-4 col-4">
-            <div class="card w-auto">
-                <div class="card-header">
-                    <h4 class="text-center text-light">Datos del Generales</h4>
-                </div>
-                <div class="card-body text-left text-light">
-                    <p>Nombre(s): <i>{{$estudiante[0]->nom_per}}</i></p>
-                    <p>Paterno: <i>{{$estudiante[0]->paterno_per}}</i></p>
-                    <p>Materno: <i>{{$estudiante[0]->materno_per}}</i></p>
-                    <p>Fecha Nacimiento: <i>{{$estudiante[0]->fecha_nac}}</i></p>
-                    <p>Codigo Postal: <i>{{$estudiante[0]->cp_per}}</i></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="text-center text-light">Datos Escolares</h4>
-                            </div>
-                            <div class="card-body text-left text-light">
-                                <p>No. Control: <i>{{$estudiante[0]->no_control}}</i></p>
-                                <p>Carrera: <i>{{$carrera[0]->nombre_carrera}}</i></p>
-                                <p>Carrera: <i>{{$carrera[0]->bachilleraro_carrera}}</i></p>
-                            </div>
+    <div class="card-header">
+        <h2 class="text-center text-light">Carreras Ofertadas</h2>
+    </div>
+    @foreach ($carreras as $carrera)
+        <div class="clear"></div>
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <div class="card col-md-6 col-6">
+                    <div class="card-header">
+                        <h4 class="text-center text-light"><i>{{ $carrera->nombre_carrera }}</i></h4>
+                    </div>
+                    <div class="cont card-body text-left text-light col-12">
+                        <div class="col-12">
+                            <p>Bachillerato: <i>{{ $carrera->bachilleraro_carrera }}</i></p>
+                            <p>Descripcion: <i>{{ $carrera->descripcion_carrera }}</i></p>
                         </div>
                     </div>
                 </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="text-center text-light">Datos de Contacto</h4>
-                                </div>
-                                <div class="card-body text-left text-light">
-                                    <p>Número de telefono: <i>{{$estudiante[0]->telefono_per}}</i></p>
-                                    <p>Correo Electronico: <i>{{$estudiante[0]->correo_per}}</i></p>
-                                </div>
-                            </div>
-                        </div>
-                </div>
             </div>
         </div>
-    </div>
+    @endforeach
 </div>
 
 </body>
