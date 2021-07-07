@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{asset('/css/estilosEstudiante.css')}}">
-    <link rel="icon" href="{{asset("/img/tarea.png")}}">
+    <link rel="icon" type="image/png" href="{{asset('/img/tarea.png')}}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 </head>
 <body>
@@ -32,8 +32,8 @@
 	<div class="offcanvas-body">
 		<div class="list-group w-100 h-100" id="list-tab" role="tablist">
 			<a class="list-group-item list-group-item-dark list-group-item-action active" id="btnHome" data-bs-toggle="list" href="#list-home" onclick="" role="tab" aria-controls="list-home"><i class="fas fa-home"></i> Inicio</a>
-			<a class="list-group-item list-group-item-dark list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile"><i class="fas fa-id-card"></i> Mis Datos</a>
-			<a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages"><i class="far fa-list-alt"></i>&nbsp; Servicios</a>
+			<a class="list-group-item list-group-item-dark list-group-item-action" id="btnDatos" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile" onclick="javascript:irDatos({{$estudiante[0]->no_control}});"><i class="fas fa-id-card"></i> Mis Datos</a>
+			<a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages" onclick="javascript:irServicios({{$estudiante[0]->no_control}});"><i class="far fa-list-alt"></i>&nbsp; Servicios</a>
             <a class="list-group-item list-group-item-dark list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión</a>
 		</div>
 	</div>
@@ -55,5 +55,5 @@
 	</body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="{{asset ('/js/controladorDashEstudiante.js')}}"></script>
+	<script type="text/javascript" src="{{asset ('/js/controladorDashEstudiante.js')}}"></script
 	</html>

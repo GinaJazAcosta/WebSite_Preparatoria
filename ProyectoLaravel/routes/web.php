@@ -32,6 +32,12 @@ Route::post('/accesoEmpleado', 'loginController@accesoEmpleado');
 Route::post('/insertarMaestro', 'registroController@insertarMaestro');
 Route::post('/insertarEstudiante', 'registroController@insertarEstudiante');
 
+/*DASBOARD ESTUDIANTE*/
+Route::get('/datosEstudiante/{control}', 'EstudianteController@datosEstudiante')->name("Datos Estudiante");
+Route::get('/inicio/{control?}','loginController@cargarInicio')->name("Inicio");
+Route::post('/compraEstudiante','EstudianteController@registrarCompra');
+Route::get('/serviciosEstudiante/{control}','EstudianteController@serviciosEstudiante');
+
 Route::get('/obtenerMaestros', function (GuzzleHttp\Client $client){
     $response = $client->request('GET', "obtenerMaestros");
     $data = json_decode($response->getBody());
