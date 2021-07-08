@@ -8,6 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('/css/estilosEstudiante.css')}}">
     <link rel="shortcut icon" href="{{ asset ('img/tarea.png') }}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+    <script src="{{ asset('/js/face-api.min.js') }}"></script>
+
 </head>
 <body>
     <div class="btn-group btn-flotanteUsuario">
@@ -23,7 +26,7 @@
 
 <a class="btn-flotante" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fas fa-arrow-alt-circle-right"></i> Menú</a>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color:rgba(0,0,0,0.8) !important"">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color:rgba(0,0,0,0.8) !important">
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title" id="offcanvasExampleLabel">Menú</h5>
 		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" style="background-color:white"></button>
@@ -53,14 +56,13 @@
         <div class="col-md-4 col-4">
             <div class="card w-auto">
                 <div class="card-header">
-                    <h4 class="text-center text-light">Datos del Generales</h4>
+                    <h4 class="text-center text-light">Cámara</h4>
                 </div>
                 <div class="card-body text-left text-light">
-                    <p>Nombre(s): <i>{{$estudiante[0]->nom_per}}</i></p>
-                    <p>Paterno: <i>{{$estudiante[0]->paterno_per}}</i></p>
-                    <p>Materno: <i>{{$estudiante[0]->materno_per}}</i></p>
-                    <p>Fecha Nacimiento: <i>{{$estudiante[0]->fecha_nac}}</i></p>
-                    <p>Codigo Postal: <i>{{$estudiante[0]->cp_per}}</i></p>
+                    <div style="text-align: center;">
+                        <video id="video" width="100%" height="auto" autoplay muted></video>
+                        <script src="{{ asset('/js/main.js') }}"></script>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,9 +74,11 @@
                                 <h4 class="text-center text-light">Datos Escolares</h4>
                             </div>
                             <div class="card-body text-left text-light">
+                                <p><i>{{$estudiante[0]->nom_per}} {{$estudiante[0]->paterno_per}} {{$estudiante[0]->materno_per}}</i></p>
+                                <p>Fecha Nacimiento: <i>{{$estudiante[0]->fecha_nac}}</i></p>
                                 <p>No. Control: <i>{{$estudiante[0]->no_control}}</i></p>
                                 <p>Carrera: <i>{{$carrera[0]->nombre_carrera}}</i></p>
-                                <p>Carrera: <i>{{$carrera[0]->bachilleraro_carrera}}</i></p>
+                                <p>Bachillerato: <i>{{$carrera[0]->bachilleraro_carrera}}</i></p>
                             </div>
                         </div>
                     </div>
@@ -100,5 +104,5 @@
 </body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="{{asset ('/js/controladorDashEstudiante.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('/js/controladorDashEstudiante.js') }}"></script>
 </html>
